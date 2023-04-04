@@ -1,0 +1,76 @@
+Storage loss mcm click on clear all without svae button all filed are cleared
+In reservoir under district link "ganjam" reservoir kpi is different value
+MI tanks KPI values are not displaying under no of tanks and fill percentage
+//span[.=' USA']//ancestor::tr//td[4]//span
+
+
+
+
+
+
+Countour display->  radio buttons 5,10,20cm when clicking on 20cmlabel automatically 5 selected
+
+
+
+
+
+
+
+
+
+in every module, we need to display Source(agency) and the data is displaying from which date to which date. -- To be discussed.
+
+MIS -- Premonsoon and Postmonsoon columns to be added
+River gauge table add columns colors for raising falling 
+crop demand-->
+industrial--source column and functioning and nonfunctioning(withdrawing water or not)
+inflow ---current water level row, Reservoir(not for Rivergauge) -- Power Generation Capacity, Live Storage Capacity.
+------->steady/rising/falling in gis screen
+------->datatable - falling (green), rising (red)-- discussion to be done
+Time to Travel -- change to 'Lag Time'
+
+
+Inflow Forecast..
+Chart is not having Menu icon with the options
+Summay Report(It should have map and all the things in the side window)
+MIS page should have download option
+
+ @Before(order = 1)
+    public void launch_browser() {
+        String name = prop.getProperty("browser");
+        if (name.equals("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("window-size=1400,800");
+            options.addArguments("headless");
+
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+
+        } else if (name.equals("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        } else if (name.equals("safari")) {
+        } else {
+            System.out.println("Please pass the correct browser value: " + name);
+        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.get("http://gowater-staging.vassarlabs.com/");
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+
+    }
+
+ @Before(order = 1)
+    public void launchBrowser() {
+        String browserName = prop.getProperty("browser");
+        driverFactory = new Webdriver_initiliser();
+        driver = driverFactory.init_driver(browserName);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().window().maximize();
+        driver.get("http://gowater-staging.vassarlabs.com/");
+    }
+
+
+level dropdown option m-replace "mm"
+Area dropdown Hectare replace "Hectarea"
